@@ -17,13 +17,6 @@
 </template>
 
 <script>
-var contentful = require('contentful')
-
-var client = contentful.createClient({
-  space: 'nakv44jd0g8a',
-  accessToken: 'cLhCWdiPHse8Acc7RgOKKtl3ZDFsM0-F5HF2ddAXocU',
-})
-
 import blockSlider from '~/components/Blocks/blockSlider'
 
 //Fields
@@ -48,8 +41,8 @@ export default {
     }
   },
   mounted() {
-    client.getEntry(this.content.sys.id).then((res) => {
-      this.column = res.fields
+    this.$contentful.getEntry(this.content.sys.id).then((res) => {
+      this.column = res.data.fields
     })
   },
 }

@@ -23,6 +23,12 @@ const createContentfulInstance = (auth) => {
         data,
       }
     },
+    getEntry: async (id) => {
+      let data = await client.getEntry(id)
+      return {
+        data,
+      }
+    },
   }
 
   return content
