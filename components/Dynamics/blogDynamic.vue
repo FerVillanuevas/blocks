@@ -30,7 +30,9 @@
                   longer.
                 </p>
                 <p class="card-text">
-                  <small class="text-muted" v-html="post.sys.updatedAt"
+                  <small
+                    class="text-muted"
+                    v-html="$moment(Date.now()).to($moment(post.sys.updatedAt))"
                     >Last updated 3 mins ago</small
                   >
                 </p>

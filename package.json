@@ -17,11 +17,13 @@
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/moment": "^1.6.1",
     "ant-design-vue": "^1.6.5",
     "bootstrap-vue": "^2.17.3",
     "contentful": "^7.14.6",
     "core-js": "^3.6.5",
     "js-cookie": "^2.2.1",
+    "moment-duration-format": "^2.3.2",
     "nuxt": "^2.14.5",
     "push-dir": "^0.4.1",
     "vue-masonry": "^0.11.8"
