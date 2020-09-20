@@ -13,10 +13,12 @@
 
 <script>
 import musicDynamic from '~/components/Dynamics/musicDynamic'
+import youtubeField from '~/components/Fields/YoutubeField'
 
 export default {
   components: {
     musicDynamic,
+    youtubeField,
   },
   data() {
     return {

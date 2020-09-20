@@ -5,9 +5,13 @@
 </template>
 
 <script>
+import row from '~/components/Layout/Row'
 export default {
   props: {
     items: Object,
+  },
+  components: {
+    row,
   },
 }
 </script>
