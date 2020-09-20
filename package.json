@@ -2,6 +2,9 @@
   "name": "blocks",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "10.X"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
