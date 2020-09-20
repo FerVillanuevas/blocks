@@ -7,30 +7,28 @@
     v-if="column"
   >
     <template v-for="block in column.blocks">
-      <component
-        v-bind:is="block.sys.contentType.sys.id"
-        :key="block.sys.id"
-        :content="block"
-      ></component>
+      <template v-if="block.sys.contentType.sys.id != 'row'">
+        <component
+          v-bind:is="block.sys.contentType.sys.id"
+          :key="block.sys.id"
+          :content="block"
+        ></component>
+      </template>
+      <template v-else>
+        <row :key="block.sys.id" :items="block.fields" />
+      </template>
     </template>
   </b-col>
 </template>
 
 <script>
-import blockSlider from '~/components/Blocks/blockSlider'
-
-//Fields
-import contentImage from '~/components/Fields/ContentImage'
-import YoutubeField from '~/components/Fields/YoutubeField'
-
-//Dynamics
-import dynamicBlock from '~/components/Dynamics/dynamicBlock'
-
 export default {
   components: {
-    blockSlider,
-    YoutubeField,
-    dynamicBlock,
+    row: () => import('~/components/Layout/Row'),
+    blockSlider: () => import('~/components/Blocks/blockSlider'),
+    YoutubeField: () => import('~/components/Fields/YoutubeField'),
+    dynamicBlock: () => import('~/components/Dynamics/dynamicBlock'),
+    contentImage: () => import('~/components/Fields/ContentImage'),
   },
   props: {
     content: Object,
@@ -51,6 +49,5 @@ export default {
 <style>
 .outline-col {
   border: 2px solid skyblue;
-  padding: 2px;
 }
 </style>

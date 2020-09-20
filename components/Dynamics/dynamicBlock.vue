@@ -1,18 +1,22 @@
 <template>
   <b-container fluid>
-    <component v-bind:is="content.fields.componentName"></component>
+    <component
+      v-if="content"
+      v-bind:is="content.fields.componentName"
+      :content="content"
+      :headline="content.fields.title"
+    ></component>
   </b-container>
 </template>
 
 <script>
-import musicDynamic from '~/components/Dynamics/musicDynamic'
-
 export default {
   props: {
     content: Object,
   },
   components: {
-    musicDynamic,
+    musicDynamic: () => import('~/components/Dynamics/musicDynamic'),
+    postDynamic: () => import('~/components/Dynamics/blogDynamic'),
   },
 }
 </script>

@@ -5,20 +5,25 @@
       <h1>{{ music.fields.title }}</h1>
       <p>{{ music.fields.myDescription }}</p>
     </b-container>
-    <b-container>
-      <music-dynamic />
+    <b-container fluid>
+      <div class="row">
+        <div class="col-12 col-md-9">
+          <music-dynamic />
+        </div>
+        <div class="col-12 col-md-3">
+          <post-dynamic headline="Posts" />
+        </div>
+      </div>
     </b-container>
   </div>
 </template>
 
 <script>
-import musicDynamic from '~/components/Dynamics/musicDynamic'
-import youtubeField from '~/components/Fields/YoutubeField'
-
 export default {
   components: {
-    musicDynamic,
-    youtubeField,
+    musicDynamic: () => import('~/components/Dynamics/musicDynamic'),
+    youtubeField: () => import('~/components/Fields/YoutubeField'),
+    postDynamic: () => import('~/components/Dynamics/blogDynamic'),
   },
   data() {
     return {

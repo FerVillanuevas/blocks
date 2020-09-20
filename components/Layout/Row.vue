@@ -1,6 +1,10 @@
 <template>
   <b-row class="outline-row">
-    <column v-for="column in items.columns" :key="column.sys.id" :content="column"></column>
+    <column
+      v-for="column in items.columns"
+      :key="column.sys.id"
+      :content="column"
+    ></column>
   </b-row>
 </template>
 
@@ -19,6 +23,5 @@ export default {
 <style>
 .outline-row {
   border: 2px solid seagreen;
-  padding: 2px;
 }
 </style>
