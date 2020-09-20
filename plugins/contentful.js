@@ -1,11 +1,8 @@
 var contentful = require('contentful')
 var Cookies = require('js-cookie')
 
-const createSalesforInstance = (options) => {
-  var client = contentful.createClient({
-    space: 'nakv44jd0g8a',
-    accessToken: 'cLhCWdiPHse8Acc7RgOKKtl3ZDFsM0-F5HF2ddAXocU',
-  })
+const createContentfulInstance = (auth) => {
+  var client = contentful.createClient(auth)
 
   var lang = Cookies.get('lang')
     ? Cookies.get('lang')
@@ -32,7 +29,7 @@ const createSalesforInstance = (options) => {
 }
 
 export default (context, inject) => {
-  const contentful = createSalesforInstance({
+  const contentful = createContentfulInstance({
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,
   })

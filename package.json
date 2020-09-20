@@ -10,11 +10,13 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=deploy --remote=deploy --allow-unclean --overwrite-local"
+    "push": "push-dir --dir=dist --branch=deploy --remote=deploy --cleanup",
+    "deploy": "npm run generate && npm run push"
   },
   "dependencies": {
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/dotenv": "^1.4.1",
     "ant-design-vue": "^1.6.5",
     "bootstrap-vue": "^2.17.3",
     "contentful": "^7.14.6",
