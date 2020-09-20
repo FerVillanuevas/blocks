@@ -24,14 +24,14 @@ var client = contentful.createClient({
   accessToken: 'cLhCWdiPHse8Acc7RgOKKtl3ZDFsM0-F5HF2ddAXocU',
 })
 
-import blockSlider from '~/components/Blocks/blockSlider'
+import blockSlider from '@/components/Blocks/blockSlider'
 
 //Fields
-import contentImage from '~/components/Fields/ContentImage'
-import YoutubeField from '~/components/Fields/YoutubeField'
+import contentImage from '@/components/Fields/ContentImage'
+import YoutubeField from '@/components/Fields/YoutubeField'
 
 //Dynamics
-import dynamicBlock from '~/components/Dynamics/dynamicBlock'
+import dynamicBlock from '@/components/Dynamics/dynamicBlock'
 
 export default {
   components: {
