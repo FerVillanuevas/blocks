@@ -9,7 +9,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=deploy --remote=deploy --allow-unclean --overwrite-local"
   },
   "dependencies": {
     "@nuxt/content": "^1.8.1",
@@ -20,6 +21,7 @@
     "core-js": "^3.6.5",
     "js-cookie": "^2.2.1",
     "nuxt": "^2.14.5",
+    "push-dir": "^0.4.1",
     "vue-masonry": "^0.11.8"
   },
   "devDependencies": {
