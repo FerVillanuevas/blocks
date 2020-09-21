@@ -1,26 +1,22 @@
 <template>
   <div v-if="block" class="block-slider">
-    <carousel draggable>
-      <content-image
-        v-for="image in block.images"
-        :image="image"
-        :key="image.sys.id"
-      />
-    </carousel>
+    <b-carousel id="carousel" indicators img-width="1024" img-height="480">
+      <b-carousel-slide v-for="image in block.images" :key="image.sys.id">
+        <template slot="img">
+          <content-image :image="image" class="w-100" />
+        </template>
+      </b-carousel-slide>
+    </b-carousel>
   </div>
 </template>
 
 <script>
-import carousel from 'ant-design-vue/lib/carousel'
-import contentImage from '~/components/Fields/ContentImage'
-
 export default {
   props: {
     content: Object,
   },
   components: {
-    carousel,
-    contentImage,
+    contentImage: () => import('~/components/Fields/ContentImage'),
   },
   data() {
     return {

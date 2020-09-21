@@ -5,8 +5,11 @@ const createContentfulInstance = (auth) => {
   var client = contentful.createClient(auth)
 
   var lang = Cookies.get('lang')
-    ? Cookies.get('lang')
-    : Cookies.set('lang', 'en-US')
+
+  if (lang == undefined) {
+    Cookies.set('lang', 'en-US')
+    lang = 'en-US'
+  }
 
   var content = {
     getEntries: async (type, options) => {

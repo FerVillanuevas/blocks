@@ -9,13 +9,12 @@
 </template>
 
 <script>
-import column from '~/components/Layout/Column'
 export default {
   props: {
     items: Object,
   },
   components: {
-    column,
+    column: () => import('~/components/Layout/Column'),
   },
 }
 </script>

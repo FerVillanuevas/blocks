@@ -1,14 +1,13 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark" sticky>
-      <b-navbar-brand to="/">NavBar</b-navbar-brand>
+      <b-navbar-brand to="/">{{ this.$lang.msg('app') }}</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          <b-nav-item to="/">{{ this.$lang.msg('home') }}</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -17,25 +16,16 @@
             <b-form-input
               size="sm"
               class="mr-sm-2"
-              placeholder="Search"
+              :placeholder="this.$lang.msg('search')"
             ></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit"
-              >Search</b-button
-            >
+            <b-button size="sm" class="my-2 my-sm-0" type="submit">{{
+              this.$lang.msg('search')
+            }}</b-button>
           </b-nav-form>
 
           <b-nav-item-dropdown :text="lang" right>
             <b-dropdown-item v-on:click="setLang('en-US')">EN</b-dropdown-item>
             <b-dropdown-item v-on:click="setLang('es-MX')">ES</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>

@@ -9,11 +9,9 @@
 </template>
 
 <script>
-import wrapper from '~/components/Layout/Wrapper'
-
 export default {
   components: {
-    wrapper,
+    wrapper: () => import('~/components/Layout/Wrapper'),
   },
   data() {
     return {
