@@ -13,7 +13,7 @@ const createContentfulInstance = (auth) => {
 
   var content = {
     getEntries: async (type, options) => {
-      var action = Object.assign(
+      let action = Object.assign(
         {
           content_type: type,
           locale: lang,
@@ -27,7 +27,9 @@ const createContentfulInstance = (auth) => {
       }
     },
     getEntry: async (id) => {
-      let data = await client.getEntry(id)
+      let data = await client.getEntry(id, {
+        locale: lang,
+      })
       return {
         data,
       }
