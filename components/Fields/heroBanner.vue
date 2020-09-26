@@ -86,7 +86,6 @@ export default {
       width: 60%;
       img {
         max-width: 80%;
-        border-radius: 0 0 50% 50%;
       }
     }
   }
