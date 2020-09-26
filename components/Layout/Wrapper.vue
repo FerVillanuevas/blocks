@@ -14,9 +14,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.outline-wrapper {
-  border: 2px solid tomato;
-}
-</style>

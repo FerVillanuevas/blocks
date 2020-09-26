@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark" sticky>
+  <div class="layout">
+    <b-navbar
+      id="animated-nav"
+      toggleable="lg"
+      :type="opacity == 1 ? 'dark' : 'light'"
+      variant="transparent"
+      fixed="top"
+    >
+      <div class="nav__background bg-dark" :style="`opacity: ${opacity}`"></div>
+
       <b-navbar-brand to="/">{{ this.$lang.msg('app') }}</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -37,17 +45,46 @@
 
 <script>
 var Cookies = require('js-cookie')
+
 export default {
   data() {
     return {
       lang: Cookies.get('lang'),
+      opacity: 0,
     }
+  },
+  mounted() {
+    this.animated()
   },
   methods: {
     setLang(lang) {
       Cookies.set('lang', lang)
       window.location.reload()
     },
+    animated() {
+      var nav = document.getElementById('animated-nav')
+      var top = 400
+      document.addEventListener('scroll', () => {
+        if (window.pageYOffset <= top) {
+          this.opacity = window.pageYOffset / top
+        } else {
+          this.opacity = 1
+        }
+      })
+    },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.nav {
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+</style>

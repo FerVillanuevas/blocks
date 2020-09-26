@@ -18,9 +18,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.outline-row {
-  border: 2px solid seagreen;
-}
-</style>

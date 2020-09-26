@@ -26,6 +26,7 @@ export default {
   components: {
     row: () => import('~/components/Layout/Row'),
     blockSlider: () => import('~/components/Blocks/blockSlider'),
+    heroBanner: () => import('~/components/Blocks/heroBanner'),
     YoutubeField: () => import('~/components/Fields/YoutubeField'),
     dynamicBlock: () => import('~/components/Dynamics/dynamicBlock'),
     contentImage: () => import('~/components/Fields/ContentImage'),
@@ -45,9 +46,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.outline-col {
-  border: 2px solid skyblue;
-}
-</style>
