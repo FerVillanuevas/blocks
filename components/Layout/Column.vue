@@ -26,6 +26,7 @@ export default {
   components: {
     row: () => import('~/components/Layout/Row'),
     blockSlider: () => import('~/components/Blocks/blockSlider'),
+    serviceBlock: () => import('~/components/Blocks/serviceBlock'),
     YoutubeField: () => import('~/components/Fields/YoutubeField'),
     dynamicBlock: () => import('~/components/Dynamics/dynamicBlock'),
     contentImage: () => import('~/components/Fields/ContentImage'),

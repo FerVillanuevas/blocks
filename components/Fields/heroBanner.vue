@@ -3,7 +3,7 @@
     <div class="cmp-hero-banner__content" v-if="hero">
       <div class="cmp-hero-banner__body">
         <h1 v-html="hero.headline">Title</h1>
-        <p v-html="hero.body">Body</p>
+        <p class="text-muted" v-html="hero.body">Body</p>
         <cta :content="hero.cta" />
       </div>
       <div class="cmp-hero-banner__image">
@@ -38,7 +38,7 @@ export default {
 @import 'bootstrap/scss/bootstrap-grid';
 
 .cmp-hero-banner {
-  min-height: 75vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   h1 {
@@ -65,7 +65,7 @@ export default {
 }
 @include media-breakpoint-up(md) {
   .cmp-hero-banner {
-    min-height: 100vh;
+    height: 100vh;
     h1 {
       font-size: 80px;
     }

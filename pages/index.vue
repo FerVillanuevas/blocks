@@ -19,7 +19,9 @@ export default {
     }
   },
   async fetch() {
-    let { data } = await this.$contentful.getEntries('wrapper')
+    let { data } = await this.$contentful.getEntries('wrapper', {
+      'fields.path[in]': 'home',
+    })
     this.wrappers = data.items
   },
 }
