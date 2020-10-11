@@ -25,7 +25,10 @@ export default {
   /*
    ** Env vars
    */
-  env: {},
+  env: {
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  },
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: ['@nuxtjs/dotenv', '@nuxtjs/moment'],
