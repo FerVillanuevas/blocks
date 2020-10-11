@@ -23,7 +23,7 @@ export default {
   },
   components: {
     column: () => import('~/components/Layout/Column'),
-    headline: () => import('~/components/Fields/Headline'),
+    headline: () => import('~/components/Fields/headline'),
   },
 }
 </script>
